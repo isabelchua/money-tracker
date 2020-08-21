@@ -18,10 +18,11 @@ body {
 
 .container {
 	margin: 15px auto;
-	width: 360px;
+	width: 100%;
 }
 
 h1 {
+	color: #10a71d;
 	letter-spacing: 1px;
 	margin: 0;
 }
@@ -86,7 +87,7 @@ input[type='number'] {
 	font-size: 16px;
 	margin: 30px 0px 30px;
 	padding: 10px;
-	width: 170px;
+	width: 165px;
 	border-radius: 20px;
 }
 
@@ -164,4 +165,10 @@ input[type='number'] {
 	-moz-appearance: textfield;
 	appearance: textfield;
 	margin: 0;
+}
+
+@media (min-width: 800px) {
+	.container {
+		width: 500px;
+	}
 }
