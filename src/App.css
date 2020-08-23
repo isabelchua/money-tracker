@@ -178,4 +178,7 @@ input[type='number'] {
 	.container {
 		width: 500px;
 	}
+	.btn {
+		width: 230px;
+	}
 }
