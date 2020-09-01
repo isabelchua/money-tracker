@@ -23,8 +23,10 @@ export const AddTransaction = () => {
 	const clickExpense = e => {
 		e.preventDefault();
 		console.log(isNaN(amount));
-		if (amount === 0 || amount === '') {
-			return alert("Amount can not be '0'!");
+		if (amount === 0) {
+			return alert("Amount can not be '0'");
+		} else if (amount === '') {
+			return alert('Amount can not be blank or a String!');
 		} else if (text === '') {
 			return alert('Enter transaction name');
 		} else {
@@ -51,9 +53,7 @@ export const AddTransaction = () => {
 					/>
 				</div>
 				<div className="form-control">
-					<label ftmlFor="amount">
-						Amount <br />
-					</label>
+					<label htmlFor="amount">Amount</label>
 					<input
 						type="number"
 						value={amount}
