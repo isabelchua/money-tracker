@@ -22,26 +22,28 @@ body {
 }
 
 h1 {
-	color: #10a71d;
-	letter-spacing: 1px;
+	color: #8a8a8a;
 	margin: 30px 0 0;
+	text-transform: uppercase;
 }
 
 h2 {
 	color: #10a71d;
 	font-size: 2.5em;
+	line-height: 90%;
 	letter-spacing: 1px;
-	margin: 0;
+	margin: 0 0 20px;
 }
 
 h3 {
 	border-bottom: 1px solid #bbb;
 	padding-bottom: 10px;
-	margin: 40px 0 10px;
+	margin: 20px 0 10px;
 }
 
 h4 {
 	margin: 0;
+	padding: 0;
 	text-transform: uppercase;
 }
 
@@ -51,8 +53,8 @@ li {
 
 .inc-exp-container {
 	background-color: rgb(29, 29, 29);
-	padding: 20px;
-	margin: 20px 0;
+	padding: 20px 20px 10px;
+	margin: 0px 0 0px;
 	border-radius: 20px;
 }
 
@@ -63,9 +65,14 @@ li {
 }
 
 .money {
+	line-height: 50%;
 	font-size: 30px;
 	letter-spacing: 1px;
-	margin: 5px 0;
+	margin: 5px 0 20px;
+}
+
+p {
+	margin: 0;
 }
 
 .money.plus {
@@ -86,46 +93,18 @@ input[type='number'] {
 	width: 100%;
 }
 
-.btn {
-	cursor: pointer;
-	color: #fff;
-	border: 0;
-	display: inline-block;
-	font-size: 16px;
-	margin: 25px 5px 25px;
-	padding: 10px 3px;
-	width: 155px;
-	border-radius: 20px;
-}
-
-.inc {
-	background-color: #10a71d;
-	float: left;
-}
-
-.exp {
-	background-color: #d61717;
-	float: right;
-}
-
-.btn:focus,
-.delete-btn:focus {
-	outline: 0;
-}
-
 .list {
 	list-style-type: none;
 	padding: 0;
-	margin-bottom: 40px;
+	margin-bottom: 0px;
 }
 
 .list li {
-	background-color: rgb(78, 78, 78);
 	color: rgb(250, 250, 250);
 	display: flex;
 	justify-content: space-between;
 	position: relative;
-	padding: 10px;
+	padding: 10px 45px 7px 20px;
 	margin: 10px 0;
 }
 
@@ -139,23 +118,16 @@ input[type='number'] {
 
 .delete-btn {
 	cursor: pointer;
-	background-color: #e74c3c;
-	border: 0;
-	color: #fff;
-	font-size: 30px;
-	line-height: 30px;
-	padding: 4px 13px 10px 13px;
+	color: rgb(255, 255, 255);
 	position: absolute;
-	top: 50%;
-	left: 0;
-	transform: translate(-100%, -50%);
-	opacity: 0;
-	transition: opacity 0.3s ease;
-	border-radius: 20px;
+	display: block;
+	top: 20%;
+	right: 10px;
+	opacity: 1;
 }
 
-.list li:hover .delete-btn {
-	opacity: 1;
+.delete-btn:hover {
+	opacity: 0.6;
 }
 
 label {
@@ -172,6 +144,29 @@ input[type='number'] {
 	-moz-appearance: textfield;
 	appearance: textfield;
 	margin: 0;
+}
+
+.btn {
+	text-align: center;
+	cursor: pointer;
+	color: #fff;
+	display: inline-block;
+	font-size: 16px;
+	margin: 25px 5px 25px;
+	padding: 10px 3px 10px;
+	border: 2px solid #272727;
+	width: 155px;
+	border-radius: 30px;
+}
+
+.inc {
+	background-color: #1f9751;
+	float: left;
+}
+
+.exp {
+	background-color: #d61717;
+	float: right;
 }
 
 @media (min-width: 800px) {

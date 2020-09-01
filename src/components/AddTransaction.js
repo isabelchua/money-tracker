@@ -4,7 +4,6 @@ import { GlobalContext } from '../context/GlobalState';
 export const AddTransaction = () => {
 	const [text, setText] = useState('');
 	const [amount, setAmount] = useState(0);
-	// const [expense, setExpense] = useState(false);
 
 	const { addTransaction } = useContext(GlobalContext);
 
@@ -23,47 +22,47 @@ export const AddTransaction = () => {
 
 	const clickExpense = e => {
 		e.preventDefault();
+		console.log(isNaN(amount));
+		if (amount === 0 || amount === '') {
+			return alert("Amount can not be '0'!");
+		} else if (text === '') {
+			return alert('Enter transaction name');
+		} else {
+			const newTransaction = {
+				id: Math.floor(Math.random() * 100000000),
+				text,
+				amount: -Math.abs(+amount)
+			};
 
-		const newTransaction = {
-			id: Math.floor(Math.random() * 100000000),
-			text,
-			//convert string to a number
-			amount: -Math.abs(+amount)
-		};
-
-		addTransaction(newTransaction);
+			addTransaction(newTransaction);
+		}
 	};
-
-	// function clickExpense() {
-	// 	return -Math.abs(amount);
-	// }
 
 	return (
 		<>
 			<form onSubmit={onSubmit}>
-				<div className='form-control'>
-					<label htmlFor='text'>Transaction Name</label>
+				<div className="form-control">
+					<label htmlFor="text">Transaction</label>
 					<input
-						type='text'
+						type="text"
 						value={text}
 						onChange={e => setText(e.target.value)}
-						placeholder=''
 						required
 					/>
 				</div>
-				<div className='form-control'>
-					<label ftmlFor='amount'>
+				<div className="form-control">
+					<label ftmlFor="amount">
 						Amount <br />
 					</label>
 					<input
-						type='number'
+						type="number"
 						value={amount}
 						onChange={e => setAmount(e.target.value)}
-						placeholder='Enter Amount..'
+						required
 					/>
 				</div>
-				<button className='btn inc'>ADD INCOME</button>
-				<button onClick={clickExpense} className='exp btn'>
+				<button className="btn inc">ADD INCOME</button>
+				<button onClick={clickExpense} className="exp btn">
 					ADD EXPENSE
 				</button>
 			</form>

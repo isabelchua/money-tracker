@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalState';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 export const Transaction = ({ transaction }) => {
 	const { deleteTransaction } = useContext(GlobalContext);
@@ -11,12 +12,12 @@ export const Transaction = ({ transaction }) => {
 			<span>
 				{sign}${Math.abs(transaction.amount)}
 			</span>
-			<button
+			<div
 				onClick={() => deleteTransaction(transaction.id)}
-				className='delete-btn'
+				className="delete-btn"
 			>
-				x
-			</button>
+				<DeleteIcon />
+			</div>
 		</li>
 	);
 };
